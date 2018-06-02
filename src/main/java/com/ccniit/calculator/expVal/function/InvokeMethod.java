@@ -8,6 +8,7 @@ import java.util.HashMap;
 
 /**
  * @author 龚军
+ * 反射例子, 通过反射获取Math类的所有方法信息
  */
 public class InvokeMethod {
 

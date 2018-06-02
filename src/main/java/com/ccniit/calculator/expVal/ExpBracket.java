@@ -15,11 +15,11 @@ import java.util.StringTokenizer;
  * @author 龚军
  */
 public class ExpBracket {
-    private static Stack stack = new Stack();
+    public static Stack stack = new Stack();
 
-    private static StringBuffer sb = new StringBuffer();// 输入结果
+    public static StringBuffer sb = new StringBuffer();// 输入结果
 
-    private static OperatorControl op = null;
+    public static OperatorControl op = null;
 
     // 处理函数用
     static StringBuffer sb1 = new StringBuffer("");
@@ -98,7 +98,7 @@ public class ExpBracket {
      * @param
      * @return 处理后的表达式
      */
-    private static String reoloce(String str) {
+    public static String reoloce(String str) {
         for (int i = 0; i < str.length(); i++) {
             if (Util.isSign(str, i)) {
                 char ch = str.charAt(i);
@@ -121,7 +121,7 @@ public class ExpBracket {
      * @param
      * @return 正确的后缀表达式
      */
-    private static String isjj(String postStr) {
+    public static String isjj(String postStr) {
         for (int i = 0; i < postStr.length(); i++) {
             char ch = postStr.charAt(i);
             if (ch == 'p') {
@@ -143,7 +143,7 @@ public class ExpBracket {
      * @return 此表达式的后缀字符串
      * @throws IOException
      */
-    private static String convertFromMiddleToPost(String exp)
+    public static String convertFromMiddleToPost(String exp)
             throws IOException {
 
         for (int i = 0; i < exp.length(); i++) {
@@ -197,7 +197,7 @@ public class ExpBracket {
      * @param
      * @throws IOException
      */
-    private static void produceOperator(String str) throws IOException {
+    public static void produceOperator(String str) throws IOException {
 
         if (op == null) {
             op = new OperatorControl();// 创建全局变量 有异常无法抛出时 这样创建
@@ -230,7 +230,7 @@ public class ExpBracket {
      * @return 表达式计算结果
      * @throws IOException
      */
-    private static double expVal(String postStr) throws IOException {
+    public static double expVal(String postStr) throws IOException {
 
         stack.clear();
         double result = 0.0;
@@ -266,7 +266,7 @@ public class ExpBracket {
 
     }
 
-    private static double val(double operand1, double operand2, String str) {
+    public static double val(double operand1, double operand2, String str) {
         double re = 0.0;
 
         if (str.equals("+")) {
@@ -301,7 +301,7 @@ public class ExpBracket {
      * @param
      * @return 函数计算完成后的表达式
      */
-    private static String isfunction(String strhs) {
+    public static String isfunction(String strhs) {
         HashMap map = new HashMap();// 生成一个空的映射表
         String stred = "";
         String op = "";
